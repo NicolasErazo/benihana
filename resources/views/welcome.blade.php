@@ -321,7 +321,7 @@
 
             <p class="mt-8 mb-8">Somos una tienda virtual Colombiana que suministra productos relacionados con Skatebording netamente tienda virtual ubicada en la ciudad de Villavicencio:
                 <br>
-                <a class="text-gray-800 underline hover:text-gray-900" href="https://instagram.com/benihana_skate_shop?igshid=YmMyMTA2M2Y=" target="_blank"><strong>Benihana Skateshop</strong></a> fue creada por: <a class="text-gray-800 underline hover:text-gray-900" href="https://nordicmade.com/"><strong>Nicolas Erazo Arce</strong></a> para suplir las necesidades de los skaters y promover el deporte en la ciudad.
+                <a class="text-gray-800 underline hover:text-gray-900" href="https://instagram.com/benihana_skate_shop?igshid=YmMyMTA2M2Y=" target="_blank"><strong>Benihana Skateshop</strong></a> fue creada por: <a class="text-gray-800 underline hover:text-gray-900" href="https://www.facebook.com/nicolas.erazo/"><strong>Nicolas Erazo Arce</strong></a> para suplir las necesidades de los skaters y promover el deporte en la ciudad.
             </p>
 
             <p class="mb-8"><strong>Benihana Skateshop</strong> sabe que con sentido social y haciendo las cosas bien, contribuye a la productividad de sus clientes y al desarrollo de las personas, ofreciendo productos y servicios innovadores, competitivos y rentables para garantizar un desarrollo sostenible.</p>
