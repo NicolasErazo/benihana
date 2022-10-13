@@ -19,7 +19,7 @@
 
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
 
-    <a class="btn-wsp" target="_blank" href="https://api.whatsapp.com/send?phone=573193648237">
+    <a class="btn-wsp" target="_blank" href="https://wa.me/573193648237/?text=Hola%20estoy%20interesado%20en%20conocer%20mas%20acerca%20de%20los%20productos%20que%20ofrece%20la%20tienda,%20Gracias!">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
     <!--Nav-->
