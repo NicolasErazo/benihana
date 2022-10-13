@@ -8,70 +8,20 @@
     <title>Benihana-Skateshop</title>
     <link rel="icon" href="{{asset('images/Skate.png')}}" type="image/x-icon">
 
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/fa00524f83.js" crossorigin="anonymous"></script>
 
-    <style>
-        .work-sans {
-            font-family: 'Work Sans', sans-serif;
-        }
-
-        #menu-toggle:checked+#menu {
-            display: block;
-        }
-
-        .hover\:grow {
-            transition: all 0.3s;
-            transform: scale(1);
-        }
-
-        .hover\:grow:hover {
-            transform: scale(1.02);
-        }
-
-        .carousel-open:checked+.carousel-item {
-            position: static;
-            opacity: 100;
-        }
-
-        .carousel-item {
-            -webkit-transition: opacity 0.6s ease-out;
-            transition: opacity 0.6s ease-out;
-        }
-
-        #carousel-1:checked~.control-1,
-        #carousel-2:checked~.control-2,
-        #carousel-3:checked~.control-3 {
-            display: block;
-        }
-
-        .carousel-indicators {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            bottom: 2%;
-            left: 0;
-            right: 0;
-            text-align: center;
-            z-index: 10;
-        }
-
-        #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
-        #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
-        #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
-            color: #000;
-            /*Set to match the Tailwind colour you want the active one to be */
-        }
-    </style>
-
 </head>
 
 <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
 
+    <a class="btn-wsp" target="_blank" href="https://api.whatsapp.com/send?phone=573193648237">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
     <!--Nav-->
     <nav id="header" class="w-full z-30 top-0 py-1">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
@@ -102,30 +52,30 @@
                 </nav>
                 <div class="order-2 md:order-3 flex items-center" id="nav-content">
 
-@guest
-@if (Route::has('login'))
-<a class="inline-block no-underline hover:text-black" href="{{ route('login') }}">
-    <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <circle fill="none" cx="12" cy="7" r="3" />
-        <path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
-    </svg>
-</a>
-@endif
-@else
+                    @guest
+                    @if (Route::has('login'))
+                    <a class="inline-block no-underline hover:text-black" href="{{ route('login') }}">
+                        <svg class="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <circle fill="none" cx="12" cy="7" r="3" />
+                            <path d="M12 2C9.243 2 7 4.243 7 7s2.243 5 5 5 5-2.243 5-5S14.757 2 12 2zM12 10c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3S13.654 10 12 10zM21 21v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1H21z" />
+                        </svg>
+                    </a>
+                    @endif
+                    @else
 
-<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-        {{ __('Logout') }}
-    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
 
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-    </form>
-</div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
 
-@endguest
+                    @endguest
 
-</div>
+                </div>
             </div>
 
             <div class="order-1 md:order-2">
@@ -208,9 +158,9 @@
                     <img class="hover:grow hover:shadow-lg" src="{{asset('images/MaderoNature.jpg')}}">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="">Madero Border</p>
-                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
-                        </svg>
+                        <a href="https://wa.me/573193648237/?text=Hola%20estoy%20interesado%20en%20conocer%20mas%20acerca%20de%20los%20productos%20que%20ofrece%20la%20tienda,%20Gracias!%20(MADERO BORDER)">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                     <p class="pt-1 text-gray-900">$165.000</p>
                 </a>
@@ -221,9 +171,9 @@
                     <img class="hover:grow hover:shadow-lg" src="{{asset('images/MaderoMariachi.jpg')}}">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="">Madero Border</p>
-                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
-                        </svg>
+                        <a href="https://wa.me/573193648237/?text=Hola%20estoy%20interesado%20en%20conocer%20mas%20acerca%20de%20los%20productos%20que%20ofrece%20la%20tienda,%20Gracias!%20(MADERO BORDER)">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                     <p class="pt-1 text-gray-900">$165.000</p>
                 </a>
@@ -234,9 +184,9 @@
                     <img class="hover:grow hover:shadow-lg" src="{{asset('images/MaderoMexico.jpg')}}">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="">Madero Border</p>
-                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
-                        </svg>
+                        <a href="https://wa.me/573193648237/?text=Hola%20estoy%20interesado%20en%20conocer%20mas%20acerca%20de%20los%20productos%20que%20ofrece%20la%20tienda,%20Gracias!%20(MADERO BORDER)">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                     <p class="pt-1 text-gray-900">$165.000</p>
                 </a>
@@ -247,9 +197,9 @@
                     <img class="hover:grow hover:shadow-lg" src="{{asset('images/MaderoBorder.jpg')}}">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="">Madero Border</p>
-                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
-                        </svg>
+                        <a href="https://wa.me/573193648237/?text=Hola%20estoy%20interesado%20en%20conocer%20mas%20acerca%20de%20los%20productos%20que%20ofrece%20la%20tienda,%20Gracias!%20(MADERO BORDER)">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                     <p class="pt-1 text-gray-900">$165.000</p>
                 </a>
@@ -260,9 +210,9 @@
                     <img class="hover:grow hover:shadow-lg" src="{{asset('images/LijaNegra.jpg')}}">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="">Lija Negra Abrasiva</p>
-                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
-                        </svg>
+                        <a href="https://wa.me/573193648237/?text=Hola%20estoy%20interesado%20en%20conocer%20mas%20acerca%20de%20los%20productos%20que%20ofrece%20la%20tienda,%20Gracias!%20(LIJAS)">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                     <p class="pt-1 text-gray-900">$25.000</p>
                 </a>
@@ -273,9 +223,9 @@
                     <img class="hover:grow hover:shadow-lg" src="{{asset('images/TrucksPolar.jpeg')}}">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="">Trucks Polar</p>
-                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
-                        </svg>
+                        <a href="https://wa.me/573193648237/?text=Hola%20estoy%20interesado%20en%20conocer%20mas%20acerca%20de%20los%20productos%20que%20ofrece%20la%20tienda,%20Gracias!%20(TRUCKS)">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                     <p class="pt-1 text-gray-900">$130.000</p>
                 </a>
@@ -286,9 +236,9 @@
                     <img class="hover:grow hover:shadow-lg" src="{{asset('images/RuedasPolar.jpeg')}}">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="">Ruedas Polar</p>
-                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
-                        </svg>
+                        <a href="https://wa.me/573193648237/?text=Hola%20estoy%20interesado%20en%20conocer%20mas%20acerca%20de%20los%20productos%20que%20ofrece%20la%20tienda,%20Gracias!%20(RUEDAS)">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                     <p class="pt-1 text-gray-900">$70.000</p>
                 </a>
@@ -299,9 +249,9 @@
                     <img class="hover:grow hover:shadow-lg" src="{{asset('images/RodamientosPolar.jpeg')}}">
                     <div class="pt-3 flex items-center justify-between">
                         <p class="">Rodamientos Polar</p>
-                        <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z" />
-                        </svg>
+                        <a href="https://wa.me/573193648237/?text=Hola%20estoy%20interesado%20en%20conocer%20mas%20acerca%20de%20los%20productos%20que%20ofrece%20la%20tienda,%20Gracias!%20(RODAMIENTOS)">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
                     </div>
                     <p class="pt-1 text-gray-900">$60.000</p>
                 </a>
